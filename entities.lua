@@ -77,15 +77,11 @@ function ents.destroy(id)
 			if v.Die then
 				v:Die()
 			end
-			
 			table.remove(ents.objects,i)
       
-      for i, v in ipairs(ents.objects) do 
-        v.id = i
-      end
-      
-     
-			
+		for i, v in ipairs(ents.objects) do 
+			v.id = i
+		end
 			print("Killed entity with ID: " .. id)
 			--table.remove(ents.objects,i) 
 		end
