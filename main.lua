@@ -25,7 +25,6 @@ end
 function love.update(dt)
   keyDown = love.keyboard.isDown
   globaldt = dt
-
   
   player.notification = false
   
@@ -77,7 +76,6 @@ function love.update(dt)
       end
     end
   end
-  
   love.window.setTitle(game_title .. " (" .. love.timer.getFPS() .. " FPS)")
 end
 
@@ -103,7 +101,6 @@ function love.draw()
   love.graphics.translate(-camera.x,-camera.y)
   
   ents:draw(1)
-  
   
   if maps[current_map]["draw"] then
     maps[current_map]["draw"]()
