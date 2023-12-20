@@ -26,15 +26,11 @@ maps[id]["draw"] = function ()
   if keyDown(controls["action"]) then
     load_map("mainmenu")
   end
-    
- -- end
 end
 
 maps[id]["load"] = 
 function () 
-
 end
-
 
 maps[id]["leave"] = 
 function ()

@@ -24,8 +24,6 @@ maps[id]["draw"] = function ()
   
   draw(scene2,-camera.x,-camera.y+sine*2,sine/100,3,3)
   draw(scene,-camera.x,-camera.y+sine/5,0,3,3)
-  
-  
 end
 
 maps[id]["load"] = 

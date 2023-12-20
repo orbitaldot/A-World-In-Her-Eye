@@ -12,9 +12,6 @@ maps[id]["cboxes"] = {
   {x=702,y=430,w=877-702,h=478-430}
 }
 
-
-
-
 maps[id]["scene"] = Gfx("textures/insidehouse.png")
 maps[id]["cmode"] = "track player"
 
@@ -34,9 +31,8 @@ function ()
     ents.create("qora", 313, 493, {individual_id="Qora"})
   end
   
-  --Wheatfield lamp
+  --Wheatfield lamps
   ents.create("lamp", 1350, 438, {render = true, on = true,radius=250})
-  
   ents.create("lamp", 638, 706, {render = true, on = true,radius=50})
   
   ents.create("telescope", 813, 797)

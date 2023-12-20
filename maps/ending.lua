@@ -44,11 +44,9 @@ function ()
 end
 
 local id = "ending" 
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () if camera.trans > 0 then camera.trans = camera.trans - 2 * (60*globaldt) end if timer("afterending") > 10 then timer("afterending",true) show_dialogue("startover") end end}
 
 maps[id]["leave"] = 
 function ()
-  
 end

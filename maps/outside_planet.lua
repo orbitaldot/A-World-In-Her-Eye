@@ -31,7 +31,6 @@ end
 
 maps[id]["leave"] = 
 function () 
-
 end
 
 --900.08102990361      987.75245383172

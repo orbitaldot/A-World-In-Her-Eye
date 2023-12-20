@@ -61,7 +61,6 @@ function ()
 end
 
 local id = "wakeywakey"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () music["guitar"]:stop() if timer("wakeup") > 3 then timer("wakeup",true) show_dialogue("wakeywakey") end end}
 dialogues[id][2] = {"&Qora is sleeping."}
@@ -70,12 +69,10 @@ dialogues[id][4] = {"&A planet she's been \nobserving is about to pass \noverhea
 dialogues[id][5] = {"&Wake her up?",nil,{{"Wake up","qorawakeup"},{"Do not","qorasleepmore"}}}
 
 local id = "qorawakeup"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () awake = true changemap("inside_house","bed") show_dialogue("qorawakeup2") end}
 
 local id = "qorawakeup2"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () music["guitar"]:stop() if timer("afterwakeup") > 2 then timer("afterwakeup",true) music["guitar"]:setVolume(1) show_dialogue("qorawakeup2") end end}
 dialogues[id][2] = {"",function () if timer("afterwakeup2") > 1.5 then timer("afterwakeup2",true) show_dialogue("qorawakeup2") end end}
@@ -83,12 +80,10 @@ dialogues[id][3] = {"&An exciting day lies ahead."}
 dialogues[id][4] = {"",function () music["guitar"]:setVolume(1) music["guitar"]:play() if difficulty == "realtime" then planet_moving = true planet_course = 210 else planet_course = 250 end show_dialogue("qorawakeup2") end}
 
 local id = "qorasleepmore"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () if timer("sleeping") > 2 then timer("sleeping",true) awake = true changemap("inside_house","bed") show_dialogue("qorasleepmore2") end end}
 
 local id = "qorasleepmore2"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () music["guitar"]:stop() if timer("afterwakeup") > 2 then timer("afterwakeup",true) music["guitar"]:setVolume(1) show_dialogue("qorasleepmore2") end end}
 dialogues[id][2] = {"",function () if timer("qorasleepmore2") > 1.5 then timer("afterwakeup2",true) show_dialogue("qorasleepmore2") end end}
@@ -96,12 +91,10 @@ dialogues[id][3] = {"&Qora woke up.+ \nBut she fears she may have \noverslept...
 dialogues[id][4] = {"",function () music["guitar"]:play() planet_course = 390 difficulty = "realtime" planet_moving = true show_dialogue("qorasleepmore2") end}
 
 local id = "floornotes"
-
 dialogues[id] = {}
 dialogues[id][1] = {"&Various notes on the planets \nQora observes."}
 
 local id = "planet_good_pos"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () music[current_music]:stop() difficulty = "calm" if timer("planet_gp") > 1.5 then timer("planet_gp",true) show_dialogue("planet_good_pos") end end}
 dialogues[id][2] = {"",function () SFX_planet_good_pos:play() show_dialogue("planet_good_pos") end}

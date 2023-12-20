@@ -22,9 +22,6 @@ dialogues[did][1] = {"",function () showdescs = false difficulty = "realtime" if
 local did = "select_calm"
 dialogues[did] = {}
 dialogues[did][1] = {"",function () showdescs = false difficulty = "calm" if music[maps[id]["music"]]:getVolume() > 0.01 then music[maps[id]["music"]]:setVolume(music[maps[id]["music"]]:getVolume()-0.005 * (60 * globaldt)) else changemap("inside_house") end end}
-  
-  
-  
 
 local descriptions = {
   "The planet passes in \nreal-time, adding \ntime stress.\nIntended gamemode.",
@@ -43,10 +40,8 @@ end
 maps[id]["load"] = 
 function () 
   SFX_wind:play()
-  
   show_dialogue("select_diff")
 end
-
 
 maps[id]["leave"] = 
 function ()
