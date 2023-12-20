@@ -1,6 +1,5 @@
 maps = {}
 
-
 local map_files = love.filesystem.getDirectoryItems("maps")
 for i, file in ipairs(map_files) do
 	if love.filesystem.load("maps/" .. map_files[i]) then
