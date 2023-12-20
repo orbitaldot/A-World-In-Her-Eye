@@ -70,8 +70,6 @@ function ents.create(name,x,y,data)
 end
 
 function ents.destroy(id)
-  print("aaa")
-  
 	for i, v in ipairs(ents.objects) do 
 		if v.id == id then
 			if v.Die then
@@ -80,18 +78,14 @@ function ents.destroy(id)
 			
 			table.remove(ents.objects,i)
       
-      for i, v in ipairs(ents.objects) do 
-        v.id = i
-      end
+			for i, v in ipairs(ents.objects) do 
+				v.id = i
+			end
       
-     
-			
 			print("Killed entity with ID: " .. id)
-			--table.remove(ents.objects,i) 
+
 		end
 	end
-		--ents.objects[id] = nil
-		
 end
 
 function ents:update(dt)
