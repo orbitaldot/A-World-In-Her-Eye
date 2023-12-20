@@ -57,31 +57,24 @@ end
 
 local id = "radiosdcheck"
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () if took_battery then if radiotimes > 6 then show_dialogue("adieumelodysilent") else show_dialogue("adieumelody") end else if has_screwdriver then show_dialogue("unscrewradio") else show_dialogue(currentradioplay) end end end}
   
 local id = "unscrewradio"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Qora loosens the bolts keeping \nthe battery in the radio."}
 dialogues[id][2] = {"&It worked!"}
 dialogues[id][3] = {"&She carefully stuffs it \nin her pocket.", function () if difficulty == "calm" then planet_course = 290 end took_battery = true end}
 
 local id = "adieumelody"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&So long,+ \never-repeating trumpets."}
 
 local id = "adieumelodysilent"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&..."}
-
-
 
 local id = "radio1"
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () music[current_music]:stop() blips[dialogue.currentblip]:stop() blips[dialogue.currentblip]:setPitch(0.5) blips[dialogue.currentblip]:play() show_dialogue(currentradioplay) end}
 dialogues[id][2] = {"",function () if timer("radiowait") > 1 then timer("radiowait",true) blips[dialogue.currentblip]:setPitch(1) show_dialogue(currentradioplay) end end}
 dialogues[id][3] = {"",function () music["union"]:play() radmusicy = math.random(-0.2,0.2) if timer("radiowait") > 3 then timer("radiowait",true) show_dialogue(currentradioplay) end end}
@@ -93,7 +86,6 @@ dialogues[id][8] = {"",function () music[current_music]:play() show_dialogue(cur
 
 local id = "radio2"
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () music[current_music]:stop() blips[dialogue.currentblip]:stop() blips[dialogue.currentblip]:setPitch(0.5) blips[dialogue.currentblip]:play() show_dialogue(currentradioplay) end}
 dialogues[id][2] = {"",function () if timer("radiowait") > 1 then timer("radiowait",true) blips[dialogue.currentblip]:setPitch(1) show_dialogue(currentradioplay) end end}
 dialogues[id][3] = {"",function () music["union"]:play() radmusicy = math.random(-0.2,0.2) if timer("radiowait") > 3 then timer("radiowait",true) show_dialogue(currentradioplay) end end}
@@ -104,7 +96,6 @@ dialogues[id][7] = {"",function () music[current_music]:play() show_dialogue(cur
 
 local id = "radio3"
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () music[current_music]:stop() blips[dialogue.currentblip]:stop() blips[dialogue.currentblip]:setPitch(0.5) blips[dialogue.currentblip]:play() show_dialogue(currentradioplay) end}
 dialogues[id][2] = {"",function () if timer("radiowait") > 2 then timer("radiowait",true) blips[dialogue.currentblip]:setPitch(1) dialogue.currentblip = "radio" show_dialogue(currentradioplay) end end}
 dialogues[id][3] = {"",function () music["uniontransmission"]:play() radmusicy = math.random(-0.2,0.2) if timer("radiowait") > 3 then timer("radiowait",true) show_dialogue(currentradioplay) end end}
@@ -119,7 +110,6 @@ dialogues[id][11] = {"",function () music[current_music]:play() show_dialogue(cu
 
 local id = "radio4"
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () music[current_music]:stop() blips[dialogue.currentblip]:stop() blips[dialogue.currentblip]:setPitch(0.5) blips[dialogue.currentblip]:play() show_dialogue(currentradioplay) end}
 dialogues[id][2] = {"",function () if timer("radiowait") > 1 then timer("radiowait",true) blips[dialogue.currentblip]:setPitch(1) show_dialogue(currentradioplay) end end}
 dialogues[id][3] = {"",function () music["union"]:play() radmusicy = math.random(-0.2,0.2) if timer("radiowait") > 3 then timer("radiowait",true) show_dialogue(currentradioplay) end end}
@@ -127,6 +117,5 @@ dialogues[id][4] = {"&...", function () radmusicy = math.random(-0.2,0.2) end}
 dialogues[id][5] = {"",function () blips[dialogue.currentblip]:stop() show_dialogue(currentradioplay) end}
 dialogues[id][6] = {"",function () music["union"]:stop() blips[dialogue.currentblip]:setPitch(0.5) blips[dialogue.currentblip]:play() if timer("radiowait") > 0.5 then show_dialogue(currentradioplay) blips[dialogue.currentblip]:setPitch(1) end end}
 dialogues[id][7] = {"",function () music[current_music]:play() show_dialogue(currentradioplay) end}
-
 
 return ent
