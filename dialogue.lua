@@ -3,7 +3,7 @@ dialogue = {
 	current_id = 1,
 	accepts_input = true,
   
-  mode = "narration",
+	mode = "narration",
 	
 	pos = "up", --Dialogue box position
 	
@@ -17,7 +17,7 @@ dialogue = {
 	printpos = 1,
 	printspeed = 0.06,
   
-  complete = false,
+  	complete = false,
 	
 	window = {
 		x = 89,
@@ -29,7 +29,7 @@ dialogue = {
 	currentblip = "default",
 	font = FONT_gg,
   
-  narration = false
+  	narration = false
 }
 
 alreadyblipped = false
