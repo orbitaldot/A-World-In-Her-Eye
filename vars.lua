@@ -18,7 +18,6 @@ current_time = "day"
 
 map_size = {640*3,480*3}
 
-
 collBoxes = {}
 
 planet_course = 232

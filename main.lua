@@ -210,7 +210,7 @@ function love.draw()
   end
   
   
-  love.graphics.setBlendMode("multiply")
+  love.graphics.setBlendMode("multiply", "premultiplied")
   rect("fill",0,0,scrw,scrh)
   love.graphics.setStencilTest()
   
