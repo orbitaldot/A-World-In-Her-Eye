@@ -37,10 +37,10 @@ alreadyblipped = false
 blips = {}
 
 blips["default"] = Sfx("sound/blip.ogg", "static")
+blips["default"]:setVolume(0.7)
+
 blips["radio"] = Sfx("sound/radioblip.ogg", "static")
 blips["robot"] = Sfx("sound/robotblip.ogg", "static")
-
-blips["default"]:setVolume(0.7)
 
 blips["pitches"] = {0.95,1,1.1}
 
@@ -68,29 +68,27 @@ function dialogue.update(dt)
 			dialogue.print = dialogue.print .. chara
 			
 			if chara == "+" then
-        
-        dialogue.printspeed = 0.5
-      
-        dialogue.print = string.gsub(dialogue.print, chara, "")
-      elseif chara == "&" then
-        dialogue.narration = true
-        dialogue.currentblip = "default"
-        dialogue.print = string.gsub(dialogue.print, chara, "")
-      elseif chara == "5" then
-        dialogue.font = FONT_mono
-        dialogue.currentblip = "robot"
-        dialogue.print = string.gsub(dialogue.print, chara, "")
-      end
+		
+			dialogue.printspeed = 0.5
+			dialogue.print = string.gsub(dialogue.print, chara, "")
+		elseif chara == "&" then
+			dialogue.narration = true
+			dialogue.currentblip = "default"
+			dialogue.print = string.gsub(dialogue.print, chara, "")
+		elseif chara == "5" then
+			dialogue.font = FONT_mono
+			dialogue.currentblip = "robot"
+			dialogue.print = string.gsub(dialogue.print, chara, "")
+		end
     
-			
-			dialogue.printpos = dialogue.printpos + 1
-			dialogue.printimer = dialogue.printspeed
-			
-			if love.keyboard.isDown(controls["action"]) then
-				dialogue.printspeed = 0.01
-			else
-				dialogue.printspeed = 0.03
-			end
+		dialogue.printpos = dialogue.printpos + 1
+		dialogue.printimer = dialogue.printspeed
+		
+		if love.keyboard.isDown(controls["action"]) then
+			dialogue.printspeed = 0.01
+		else
+			dialogue.printspeed = 0.03
+		end
       
       if dialogues[dialogue.current_id][dialogue.step][1] ~= "" and chara ~= "+" and chara ~= " " and chara ~= "&" then
 				blips[dialogue.currentblip]:stop()
@@ -145,13 +143,13 @@ function dialogue.draw()
 			--col(255,255,255,255)
 			--poly("fill",actors[dialogues[dialogue.current_id][dialogue.step][1]].x,104,actors[dialogues[dialogue.current_id].speaker].x+20,134,actors[dialogues[dialogue.current_id].speaker].x+40,104)
 	
-    if dialogue.narration then
-      col(255,255,255,255)
-			textf(dialogue.print,0,10,scrw,"center",0,1,1)
-    else
-      local dw = dialogue.window
-			
-      col(255,255,255,255)
+		if dialogue.narration then
+		col(255,255,255,255)
+				textf(dialogue.print,0,10,scrw,"center",0,1,1)
+		else
+			local dw = dialogue.window
+				
+			col(255,255,255,255)
 			love.graphics.setLineWidth(3)
 			rect("line",dw.x-2,dw.y+4,dw.w+4,dw.h-8,20,50)
 			
@@ -160,16 +158,16 @@ function dialogue.draw()
 			rect("fill",dw.x,dw.y,dw.w,dw.h,20,50)
 			
 			love.graphics.setScissor(dw.x,dw.y,dw.w,dw.h)
-			
-      col(0,0,0,255)
+				
+			col(0,0,0,255)
 			textf(dialogue.print,dw.x+20,dw.y+10,dw.w,"left",0,0.75,0.75)
 			love.graphics.setScissor()
-      
-      col(255,255,255,255)
-      if dialogue.complete then
-        col(180,180,180,255)
-        text("[X]",dw.x+dw.w-60,dw.y+dw.h-25-dingy/2,0,0.75,0.75)
-      end
+		
+			col(255,255,255,255)
+			if dialogue.complete then
+				col(180,180,180,255)
+				text("[X]",dw.x+dw.w-60,dw.y+dw.h-25-dingy/2,0,0.75,0.75)
+			end
 		end
 		
 	
@@ -178,17 +176,15 @@ function dialogue.draw()
 		if dialogues[dialogue.current_id][dialogue.step][3] then
 			if dialogue.printpos >= string.len(dialogues[dialogue.current_id][dialogue.step][1]) then
 			
-        textf(dialogues[dialogue.current_id][dialogue.step][3][1][1],0,scrh-70,scrw,"center",0,1,1)
-        textf(dialogues[dialogue.current_id][dialogue.step][3][2][1],0,scrh-45,scrw,"center",0,1,1)
+        		textf(dialogues[dialogue.current_id][dialogue.step][3][1][1],0,scrh-70,scrw,"center",0,1,1)
+        		textf(dialogues[dialogue.current_id][dialogue.step][3][2][1],0,scrh-45,scrw,"center",0,1,1)
 				
 				circ("fill", scrw/2-100, scrh - 85 + 25 * dialogue.selection,5)
 			end
 		end
 		
 		if dialogue.printpos-1 == string.len(dialogues[dialogue.current_id][dialogue.step][1]) then
-  
-				col(255,255,255)
-
+			col(255,255,255)
 		end
 	end
 end
