@@ -124,7 +124,6 @@ function ent:interact()
 end
 
 local id = "findexupery"
-
 dialogues[id] = {}
 dialogues[id][1] = {"&A broken-down robot..."}
 dialogues[id][2] = {"&Now this is something new."}
@@ -132,7 +131,6 @@ dialogues[id][3] = {"&The planets that pass by \nQora's own are usually \ncomple
 dialogues[id][4] = {"",function () table.remove(dialogues[id],4) table.remove(dialogues[id],3) table.remove(dialogues[id],2) show_dialogue("findexupery") end}
 
 local id = "insertbattery"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () if difficulty == "calm" then planet_course = 315 end ents.create("lamp", 56, 290, {render = false, radius = 15, on = true, toggleable = false}) bat_in = true show_dialogue("insertbattery") end}
 dialogues[id][2] = {"&The battery fits right in the \ncylindrical hole in the \nrobot's head."}
@@ -150,7 +148,6 @@ dialogues[id][11] = {"5Now that I've stated my \nraison d'etre, just..."}
 dialogues[id][12] = {"5...give me five more \nminutes or so before \ngetting back to work...",function () exupery_look = "down" end}
 
 local id = "exuperysighalot"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () exupery_look = "up" if timer("exupery2") > 1.5 then timer("exupery2",true) show_dialogue("exuperysighalot") end end}
 dialogues[id][2] = {"5( sigh )",function () exupery_look = "down" end}
@@ -163,12 +160,10 @@ dialogues[id][8] = {"5So...+ unless you have \nsomething you can make \nthat stu
 dialogues[id][9] = {"5...I'm stuck in this \ncave.",function () interacted_with_exupery = true exupery_look = "down" end}
 
 local id = "exuperysighalotmore"
-
 dialogues[id] = {}
 dialogues[id][1] = {"5( sigh )",function () exupery_look = "down" end}
 
 local id = "exuperygetbiofuel"
-
 dialogues[id] = {}
 dialogues[id][1] = {"5Oh, excellent.",function () exupery_look = "up" end}
 dialogues[id][2] = {"5Just pluck the battery \nout and pour the fuel \nright into the hole."}
@@ -191,12 +186,7 @@ dialogues[id][18] = {"5You don't want to end up \nwith the same fate I \nwould h
 dialogues[id][19] = {"5Hah.", function () exupery_befriended = true if difficulty == "calm" then planet_course = 350 end end}
 
 local id = "exuperyhah"
-
 dialogues[id] = {}
 dialogues[id][1] = {"5Hah!"}
-
-
-
-
 
 return ent
