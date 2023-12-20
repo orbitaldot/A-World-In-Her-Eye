@@ -190,20 +190,16 @@ function dialogue.draw()
 end
 
 function show_dialogue(id)
-  dialogue.narration = false
-  dialogue.font = FONT_gg
-  
-  alreadyblipped = false
-  
-  dialogue.complete = false
-  
-  dialogue.accepts_input = false
-  
+  	dialogue.narration = false
+  	dialogue.font = FONT_gg
+  	dialogue.complete = false
+  	dialogue.accepts_input = false
 	dialogue.current_id = id
 	dialogue.selection = 1
+
+	alreadyblipped = false
   
-  timer("dingy",true)
-	
+  	timer("dingy",true)
 	timer("dialogue blip",true)
 	
 	if id ~= former then
@@ -260,22 +256,14 @@ function dresize(x,y,w,h)
   dialogue.window.x,dialogue.window.y,dialogue.window.w,dialogue.window.h = x,y,w,h
 end
 
--- in case ya need it: \n
-
 local id = "startover"
-
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Start over?",nil,{{"Yes","reloaduniverse"},{"No","resume"}}}
 
 local id = "reloaduniverse"
-
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () ending = true music[current_music]:stop() if camera.trans < 255 then camera.trans = camera.trans + 2 * (60*globaldt) else reset() show_dialogue("reloaduniverse") end end}
 
 local id = "resume"
-
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () show_dialogue("resume") end}
