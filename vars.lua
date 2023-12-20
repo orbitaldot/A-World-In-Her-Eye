@@ -120,36 +120,21 @@ icon = love.image.newImageData("textures/icon.png")
 love.window.setIcon(icon)
 
 radiotimes = 1
-
-  awake = false
-
-  wanted_screwdriver = false
-
-  has_screwdriver = false
-
-  took_battery = false
-
-  exupery_powered = false
-
-  interacted_with_exupery = false
-
-  wheat_inv = 0
-
-  wheat_h = {false,false}
-
-  made_bread = false
-
-  made_biofuel = false
-
-  exupery_befriended = false
-
-  ending = false
-
-  planet_notification = false
-  
-  difficulty = "calm"
-  
-  planet_moving = false
+awake = false
+wanted_screwdriver = false
+has_screwdriver = false
+took_battery = false
+exupery_powered = false
+interacted_with_exupery = false
+wheat_inv = 0
+wheat_h = {false,false}
+made_bread = false
+made_biofuel = false
+exupery_befriended = false
+ending = false
+planet_notification = false
+difficulty = "calm"
+planet_moving = false
 
 function reset()
   awake = false
