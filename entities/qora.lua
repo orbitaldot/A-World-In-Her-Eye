@@ -47,55 +47,55 @@ function ent:update(dt)
   self.canmove.right = true
         
   
-    if keyDown(controls["up"]) and player.canmove then
-      if self.speed.y > -3 then
-        self.speed.y = self.speed.y - 0.1 * (60*dt)
-      end
-      
-      self.facing = 2
-      self.moving = true
-    else
-      if self.speed.y < 0 then
-        self.speed.y = self.speed.y + 0.1 * (60*dt)
-      end
+  if keyDown(controls["up"]) and player.canmove then
+    if self.speed.y > -3 then
+      self.speed.y = self.speed.y - 0.1 * (60*dt)
     end
     
-    if keyDown(controls["down"]) and player.canmove then
-      if self.speed.y < 3 then
-        self.speed.y = self.speed.y + 0.1 * (60*dt)
-      end
-      
-      self.facing = 1
-      self.moving = true
-    else
-      if self.speed.y > 0 then
-        self.speed.y = self.speed.y - 0.1 * (60*dt)
-      end
+    self.facing = 2
+    self.moving = true
+  else
+    if self.speed.y < 0 then
+      self.speed.y = self.speed.y + 0.1 * (60*dt)
+    end
+  end
+  
+  if keyDown(controls["down"]) and player.canmove then
+    if self.speed.y < 3 then
+      self.speed.y = self.speed.y + 0.1 * (60*dt)
     end
     
-    if keyDown(controls["left"]) and player.canmove then
-      if self.speed.x > -3 then
-        self.speed.x = self.speed.x - 0.1 * (60*dt)
-      end
-      
-      self.moving = true
-    else
-      if self.speed.x < 0 then
-        self.speed.x = self.speed.x + 0.1 * (60*dt)
-      end
+    self.facing = 1
+    self.moving = true
+  else
+    if self.speed.y > 0 then
+      self.speed.y = self.speed.y - 0.1 * (60*dt)
+    end
+  end
+  
+  if keyDown(controls["left"]) and player.canmove then
+    if self.speed.x > -3 then
+      self.speed.x = self.speed.x - 0.1 * (60*dt)
     end
     
-    if keyDown(controls["right"]) and player.canmove then
-      if self.speed.x < 3 then
-        self.speed.x = self.speed.x + 0.1 * (60*dt)
-      end
-      
-      self.moving = true
-    else
-      if self.speed.x > 0 then
-        self.speed.x = self.speed.x - 0.1 * (60*dt)
-      end
+    self.moving = true
+  else
+    if self.speed.x < 0 then
+      self.speed.x = self.speed.x + 0.1 * (60*dt)
     end
+  end
+  
+  if keyDown(controls["right"]) and player.canmove then
+    if self.speed.x < 3 then
+      self.speed.x = self.speed.x + 0.1 * (60*dt)
+    end
+    
+    self.moving = true
+  else
+    if self.speed.x > 0 then
+      self.speed.x = self.speed.x - 0.1 * (60*dt)
+    end
+  end
   
   if self.moving then
     if timer("qorarun") > 0.15 then
