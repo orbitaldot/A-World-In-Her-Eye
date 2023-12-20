@@ -48,24 +48,20 @@ end
 
 local id = "madebiofuel"
 dialogues[id] = {} --\n
-
 dialogues[id][1] = {"&A fulfillment of its own \nraison d'etre."}
 
 local id = "biofuelgen"
 dialogues[id] = {} --\n
-
 dialogues[id][1] = {"&Qora recognizes this to be a \nbiofuel generator."}
 dialogues[id][2] = {"&She never really found a use \nfor it though..."}
 
 local id = "biofuelgen_but_what_for"
 dialogues[id] = {} --\n
-
 dialogues[id][1] = {"&Qora recognizes this to be a \nbiofuel generator."}
 dialogues[id][2] = {"&She could put her wheat \nthrough it, but for what \npurpose?"}
 
 local id = "makebiofuel"
 dialogues[id] = {} --\n
-
 dialogues[id][1] = {"",function ()  if difficulty == "calm" then planet_course = 335 end dialogue.currentblip = "default" music[current_music]:stop() blips[dialogue.currentblip]:stop() blips[dialogue.currentblip]:setPitch(0.5) blips[dialogue.currentblip]:play() show_dialogue("makebiofuel") end}
 dialogues[id][2] = {"",function () if timer("bfgwait") > 1 then timer("bfgwait",true) SFX_biofuel:stop() bouncemax = 0 show_dialogue("makebiofuel") end end}
 dialogues[id][3] = {"",function () SFX_biofuel:play() if bouncemax < 3 then bouncemax = bouncemax + 0.5 * (60*globaldt) end if timer("bfgwait") > 5 then blips["default"]:play() show_dialogue("makebiofuel") end end}
