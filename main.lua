@@ -129,7 +129,6 @@ function love.draw()
   
   love.graphics.push()
   
-  
   table.sort(drawQueue, function(a, b) return a.y < b.y end )
   
   for i, v in ipairs(drawQueue) do
@@ -261,9 +260,9 @@ function love.keypressed(key)
   
   ents:kp(key)
   
-  if key == "8" then
-    show_dialogue("diatest1")
-  end
+  -- if key == "8" then
+  --   show_dialogue("diatest1")
+  -- end
   
   if dialogue.active and dialogue.accepts_input then
     if key == controls["action"] and dialogues[dialogue.current_id][1] ~= "" then
