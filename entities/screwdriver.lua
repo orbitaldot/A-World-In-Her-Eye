@@ -37,26 +37,19 @@ end
 
 local id = "screwdriver"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&It's a heavy-duty screwdriver."}
 dialogues[id][2] = {"&Seems like someone gave up \nout of frustration."}
 dialogues[id][3] = {"&Make Qora take it?",nil,{{"yes","tookscrewdriver"},{"no","didntscrew"}}}
   
 local id = "tookscrewdriver"
 dialogues[id] = {}
-
 dialogues[id][1] = {"", function () if difficulty == "calm" then planet_course = 280 end ents.destroy(targetent("screwdriver","Screwie")) if wanted_screwdriver then dialogue.step = 3 show_dialogue("tookscrewdriver") else show_dialogue("tookscrewdriver") end end}
 dialogues[id][2] = {"&Qora stuffs it in her pocket.", function () has_screwdriver = true end}
 dialogues[id][3] = {"",function () dialogue.step = 4 show_dialogue("tookscrewdriver") end}
 dialogues[id][4] = {"&Then again, if they anyways \nleft it in a desolate cave...", function () has_screwdriver = true end}
 
-
-
 local id = "didntscrew"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Whoever left it here might \nneed it after all.",function () wanted_screwdriver = true end}
   
-
-
 return ent
