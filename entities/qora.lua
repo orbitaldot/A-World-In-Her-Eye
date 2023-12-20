@@ -168,12 +168,10 @@ function ent:update(dt)
   
   currentqora = self.id
   
-  
   player.x = self.x
   player.y = self.y
   player.w = self.w
   player.h = self.h
-  
   
    if #collBoxes > 0 then
     for i, cb in ipairs(collBoxes) do
