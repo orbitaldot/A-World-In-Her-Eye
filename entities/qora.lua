@@ -248,7 +248,6 @@ function ent:kp(key)
     for i,v in ipairs(collBoxes) do
       if coll(self.x,self.y-40,self.w,40,v.x,v.y,v.w,v.h) and dialogue.active == false then
         if v.command then
-          --print("Pingas")
           loadstring(v.command)()
         end
       end
