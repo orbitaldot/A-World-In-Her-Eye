@@ -35,12 +35,10 @@ end
 
 local id = "furnace"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Qora uses this to make bread for \nherself."}
 
 local id = "sorrygamerushed"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&She's not up to it."}
 
 return ent
