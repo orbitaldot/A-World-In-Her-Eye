@@ -35,7 +35,6 @@ end
 
 local id = "telescope"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Qora has enjoyed stargazing for \nas long as she can remember."}
 dialogues[id][2] = {"&She uses this telescope to spot \npassing planets."}
 dialogues[id][3] = {"&..."}
@@ -43,23 +42,19 @@ dialogues[id][4] = {"",function () if planet_course < 249 then show_dialogue("pl
 
 local id = "planetnotyet"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&The planet is still a little too \nfar away for Qora to reach."}
 dialogues[id][2] = {"&She still has time."}
 
 local id = "planetnow"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&The planet is at the perfect \nposition for Qora to reach!"}
 
 local id = "planetgone"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&The planet already passed."}
 
 local id = "telescope_exupery"
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Qora observes the passed planet."}
 dialogues[id][2] = {"&Exupery's waving at her!"}
 
