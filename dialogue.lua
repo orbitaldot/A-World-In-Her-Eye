@@ -36,9 +36,9 @@ alreadyblipped = false
 
 blips = {}
 
-blips["default"] = Sfx("sound/blip.ogg")
-blips["radio"] = Sfx("sound/radioblip.ogg")
-blips["robot"] = Sfx("sound/robotblip.ogg")
+blips["default"] = Sfx("sound/blip.ogg", "static")
+blips["radio"] = Sfx("sound/radioblip.ogg", "static")
+blips["robot"] = Sfx("sound/robotblip.ogg", "static")
 
 blips["default"]:setVolume(0.7)
 
