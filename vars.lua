@@ -46,7 +46,6 @@ controls["up"] = "up"
 controls["down"] = "down"
 controls["left"] = "left"
 controls["right"] = "right"
-
 controls["action"] = "x"
 
 love.graphics.setDefaultFilter("nearest","nearest")
