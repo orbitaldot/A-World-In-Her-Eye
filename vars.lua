@@ -101,7 +101,6 @@ SFX_planet_good_pos = Sfx("sound/goodpos.ogg", static)
 current_music = ""
 
 music = {}
-
 music["guitar"] = Sfx("music/guitar.ogg", stream)
 music["space"] = Sfx("music/space.ogg", stream)
 music["wind"] = SFX_wind
