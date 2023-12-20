@@ -40,29 +40,21 @@ function ent:kp(key)
 end
 
 local id = "backtobed"
-
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Make Qora head to \nbed already?",nil,{{"Yes","sleep"},{"Do not","nosleep"}}}
 
 local id = "sleep"
-
 dialogues[id] = {}
 dialogues[id][1] = {"",function () if planet_course > 360 or exupery_befriended then show_dialogue("actualsleep") else show_dialogue("sleep") end end}
 dialogues[id][2] = {"&Qora's too active to sleep now."}
 
 local id = "actualsleep"
-
 dialogues[id] = {}
-
 dialogues[id][1] = {"&Good night, Qora."}
 dialogues[id][2] = {"",function () music["guitar"]:stop() ending = true if camera.trans < 255 then camera.trans = camera.trans + 1 * (60*globaldt) else load_map("ending2") end music["space"]:setPitch(1.2) music["space"]:play() end}
 
 local id = "nosleep"
-
 dialogues[id] = {}
-
 dialogues[id][1] = {"",function () show_dialogue("nosleep") end}
-
 
 return ent
