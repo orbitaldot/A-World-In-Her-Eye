@@ -38,10 +38,7 @@ player = {
   notification = false
 }
 
-
-
 controls = {}
-
 controls["up"] = "up"
 controls["down"] = "down"
 controls["left"] = "left"
