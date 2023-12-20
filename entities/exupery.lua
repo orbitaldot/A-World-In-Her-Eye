@@ -58,8 +58,6 @@ function ent:update(dt)
     if exupery_stand then
       movelamp(54, 193)
     end
-    
-   
   end
   
   self.h = exupery_height
@@ -92,8 +90,6 @@ function ent:draw(layer)
           end
         end
       end)
-  elseif layer == 3 then
-   
   end
 end
 
