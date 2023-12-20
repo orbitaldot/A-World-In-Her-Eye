@@ -281,7 +281,6 @@ function love.keypressed(key)
       if key == "w" or key == "up" then
         if dialogue.selection >= 1.1 then
           dialogue.selection = dialogue.selection - 1
-        
         end
       elseif key == "s" or key == "down" then
         if dialogue.selection <= 1.9 then
